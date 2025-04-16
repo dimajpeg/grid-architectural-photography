@@ -1,3 +1,24 @@
+:root {
+  --font-family: "Roboto", sans-serif;
+  --second-family: "Delius Unicase", sans-serif;
+}
+
+body {
+  width: 1170px;
+  margin: 0 auto;
+}
+
+h2 {
+  font-family: var(--second-family);
+  font-weight: 400;
+  font-size: 36px;
+  letter-spacing: 0.05em;
+  text-align: center;
+  color: #000;
+  margin: 0%;
+  padding: 120px 0 80px;
+}
+
 ul {
   display: grid;
   grid-template-columns: repeat(3, 370px);
@@ -9,21 +30,59 @@ ul {
 }
 
 li {
-  background-color: salmon;
+  background-color: rgb(249, 249, 249);
   border-radius: 20px;
   padding: 20px;
   display: grid;
   grid-template-columns: auto auto;
   justify-content: space-between;
   align-content: space-between;
+  position: relative;
+  overflow: hidden;
+  background-size: cover;
+  transition: 900ms;
+  color: var(--font-family);
+  background-position: center;
+  background-size: 100%;
 
 }
 
+b {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 20px;
+  color: #fff;
+}
+
+time {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 20px;
+  color: #e0e0e0;
+}
+
+li::before,
 li::after {
   content: "";
-  display: block; 
-  background: linear-gradient (to top, #241f24 0%, rgba(91, 91, 91, 0.45) 34.11%, rgba(187, 186, 192, 0.26) 62.5%);
+  display: block;
+  background: linear-gradient(to top, #241f24 1.04%, rgba(91, 91, 91, 0.26) 6.99%, rgba(187, 186, 192, 0) 12.29%);
   position: absolute;
+  inset: 0;
+  transition: 400ms;
+}
+
+li::after {
+  background: linear-gradient(to top, #241f24 0%, rgba(91, 91, 91, 0.45) 34.11%, rgba(187, 186, 192, 0.26) 62.5%);
+
+}
+
+li:not(:hover)::before,
+li:hover::after {
+  opacity: 0;
+}
+
+li:hover {
+  background-size: 115%;
 }
 
 .wide {
@@ -35,17 +94,19 @@ li::after {
 }
 
 button {
-  background-color: #4CAF50;
+  background-color: #f9fdf9;
   border: none;
   cursor: pointer;
   width: 40px;
-  padding: 40px;
+  height: 40px;
   border-radius: 8px;
   transition: 400ms;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 button:not(:hover) {
-  opacity: 0.5;
+  opacity: 100%;
 }
 
 :not(:hover)>button {
@@ -54,4 +115,109 @@ button:not(:hover) {
 
 button:nth-child(2) {
   margin-left: auto;
+}
+
+li>:not(button) {
+  z-index: 1;
+}
+
+.architectural {
+  li:nth-child(1) {
+    background-image: url(./images/jasel.png);
+  }
+
+  li:nth-child(2) {
+    background-image: url(./images/tom.png);
+  }
+
+  li:nth-child(3) {
+    background-image: url(./images/jonah.png);
+  }
+
+  li:nth-child(4) {
+    background-image: url(./images/federico.png);
+  }
+
+  li:nth-child(5) {
+    background-image: url(./images/casey.png);
+  }
+
+  li:nth-child(6) {
+    background-image: url(./images/alex.png);
+  }
+}
+
+.still-life {
+  li:nth-child(1) {
+    background-image: url(./images/robert.png);
+  }
+
+  li:nth-child(2) {
+    background-image: url(./images/sean.png);
+  }
+
+  li:nth-child(3) {
+    background-image: url(./images/john.png);
+  }
+
+  li:nth-child(4) {
+    background-image: url(./images/dave.png);
+  }
+
+  li:nth-child(5) {
+    background-image: url(./images/leo.png);
+  }
+
+  li:nth-child(6) {
+    background-image: url(./images/rob.png);
+  }
+}
+
+.portrait-fashion {
+  li:nth-child(1) {
+    background-image: url(./images/poja.png);
+  }
+
+  li:nth-child(2) {
+    background-image: url(./images/dom.png);
+  }
+
+  li:nth-child(3) {
+    background-image: url(./images/seth.png);
+  }
+
+  li:nth-child(4) {
+    background-image: url(./images/devn.png);
+  }
+
+  li:nth-child(5) {
+    background-image: url(./images/noah.png);
+  }
+
+  li:nth-child(6) {
+    background-image: url(./images/sinc.png);
+  }
+
+  li:nth-child(7) {
+    background-image: url(./images/sethd.png);
+  }
+
+  li:nth-child(8) {
+    background-image: url(./images/melissa.png);
+  }
+
+  li:nth-child(9) {
+    background-image: url(./images/broke.png);
+  }
+
+  li:nth-child(10) {
+    background-image: url(./images/clem.png);
+  }
+}
+.heart {
+  background-image: url("images/heart.svg");
+}
+
+.download {
+  background-image: url("images/download.svg");
 }
