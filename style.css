@@ -69,6 +69,7 @@ li::after {
   position: absolute;
   inset: 0;
   transition: 400ms;
+  pointer-events: none;
 }
 
 li::after {
@@ -106,7 +107,7 @@ button {
 }
 
 button:not(:hover) {
-  opacity: 100%;
+  opacity: 0.5;
 }
 
 :not(:hover)>button {
